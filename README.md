@@ -1,6 +1,8 @@
 # Time Constants
 
 [![Build Status](https://travis-ci.org/stevegrunwell/time-constants.svg?branch=develop)](https://travis-ci.org/stevegrunwell/time-constants)
+[![Packagist](https://img.shields.io/packagist/v/stevegrunwell/time-constants.svg)](https://packagist.org/packages/stevegrunwell/time-constants)
+
 
 The Time Constants package defines a number of useful PHP constants within your application, making it easier to express measures of time.
 
