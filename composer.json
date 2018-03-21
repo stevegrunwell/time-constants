@@ -10,6 +10,10 @@
             "homepage": "https://stevegrunwell.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/stevegrunwell/time-constants/issues",
+        "source": "https://github.com/stevegrunwell/time-constants"
+    },
     "require": {},
     "require-dev": {
         "phpunit/phpunit": "^7.0"
