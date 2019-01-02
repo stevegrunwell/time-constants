@@ -15,8 +15,8 @@
  */
 
 /* One second. */
-if ( ! defined( 'ONE_SECOND' ) ) {
-    define( 'ONE_SECOND', 1 );
+if (! defined('ONE_SECOND')) {
+    define('ONE_SECOND', 1);
 }
 
 /* One minute = 60 seconds. */
@@ -57,8 +57,8 @@ if (! defined('YEAR_IN_SECONDS')) {
  */
 
 /* One second. */
-if ( ! defined( 'ONE_MINUTE' ) ) {
-    define( 'ONE_MINUTE', 1 );
+if (! defined('ONE_MINUTE')) {
+    define('ONE_MINUTE', 1);
 }
 
 /* One hour = 60 minutes. */
