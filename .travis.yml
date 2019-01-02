@@ -1,5 +1,11 @@
 language: php
 dist: trusty
+sudo: false
+
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
 
 php:
   - nightly

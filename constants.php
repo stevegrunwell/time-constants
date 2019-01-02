@@ -14,6 +14,11 @@
  * @link https://codex.wordpress.org/Easier_Expression_of_Time_Constants
  */
 
+/* One second. */
+if ( ! defined( 'ONE_SECOND' ) ) {
+    define( 'ONE_SECOND', 1 );
+}
+
 /* One minute = 60 seconds. */
 if (! defined('MINUTE_IN_SECONDS')) {
     define('MINUTE_IN_SECONDS', 60);
@@ -50,6 +55,11 @@ if (! defined('YEAR_IN_SECONDS')) {
  * For platforms that measure time based in minutes (such as Laravel's Cache facade), these
  * constants provide similar functionality.
  */
+
+/* One second. */
+if ( ! defined( 'ONE_MINUTE' ) ) {
+    define( 'ONE_MINUTE', 1 );
+}
 
 /* One hour = 60 minutes. */
 if (! defined('HOUR_IN_MINUTES')) {

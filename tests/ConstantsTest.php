@@ -26,12 +26,14 @@ class ConstantsTest extends TestCase
     public function constantsProvider()
     {
         return [
+            'One second (in seconds)'       => ['ONE_SECOND'],
             'One minute (in seconds)'       => ['MINUTE_IN_SECONDS'],
             'One hour (in seconds)'         => ['HOUR_IN_SECONDS'],
             'One day (in seconds)'          => ['DAY_IN_SECONDS'],
             'One week (in seconds'          => ['WEEK_IN_SECONDS'],
             'One 30-day month (in seconds)' => ['MONTH_IN_SECONDS'],
             'One year (in seconds)'         => ['YEAR_IN_SECONDS'],
+            'One minute (in minutes)'       => ['ONE_MINUTE'],
             'One hour (in minutes)'         => ['HOUR_IN_MINUTES'],
             'One day (in minutes)'          => ['DAY_IN_MINUTES'],
             'One week (in minutes'          => ['WEEK_IN_MINUTES'],
