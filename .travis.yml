@@ -1,16 +1,36 @@
 language: php
 dist: trusty
+sudo: false
+
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
 
 php:
+  - nightly
+  - 7.3
   - 7.2
   - 7.1
   - 7.0
+
+matrix:
+  fast_finish: true
+  include:
+    - name: Coding standards
+      php: 7.2
+      env: CODING_STANDARDS=1
 
 install:
   - composer install --no-interaction --prefer-dist
 
 script:
-  - vendor/bin/phpunit
+  - |
+    if [[ ${CODING_STANDARDS} ]]; then
+      ./vendor/bin/php-cs-fixer fix --dry-run
+    else
+      vendor/bin/phpunit
+    fi
 
 notifications:
   email: false
