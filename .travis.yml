@@ -8,11 +8,23 @@ php:
   - 7.1
   - 7.0
 
+matrix:
+  fast_finish: true
+  include:
+    - name: Coding standards
+      php: 7.2
+      env: CODING_STANDARDS=1
+
 install:
   - composer install --no-interaction --prefer-dist
 
 script:
-  - vendor/bin/phpunit
+  - |
+    if [[ ${CODING_STANDARDS} ]]; then
+      ./vendor/bin/php-cs-fixer fix --dry-run
+    else
+      vendor/bin/phpunit
+    fi
 
 notifications:
   email: false
