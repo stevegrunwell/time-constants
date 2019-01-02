@@ -50,6 +50,7 @@ This is a list of all constants defined by this package, along with their values
 
 ### Time based in seconds
 
+* `ONE_SECOND` (1 second)
 * `MINUTE_IN_SECONDS` (60 seconds)
 * `HOUR_IN_SECONDS` (3600 seconds)
 * `DAY_IN_SECONDS` (86,400 seconds)
@@ -59,6 +60,7 @@ This is a list of all constants defined by this package, along with their values
 
 ### Time based in minutes
 
+* `ONE_MINUTE` (1 minute)
 * `HOUR_IN_MINUTES` (60 minutes)
 * `DAY_IN_MINUTES` (1,440 minutes)
 * `WEEK_IN_MINUTES` (10,080 minutes)
