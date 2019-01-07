@@ -1,4 +1,7 @@
 <?php
+
+namespace Constants\Tests;
+
 /**
  * Tests the definition of time constants.
  *
@@ -13,6 +16,10 @@ class ConstantsTest extends TestCase
      * Ensure that each constant is defined and numeric.
      *
      * @dataProvider constantsProvider()
+     *
+     * @param string $constant
+     *
+     * @return void
      */
     public function testConstantsAreDefined($constant)
     {
@@ -22,6 +29,8 @@ class ConstantsTest extends TestCase
 
     /**
      * Provides a list of all constants defined by this package.
+     *
+     * @return array
      */
     public function constantsProvider()
     {

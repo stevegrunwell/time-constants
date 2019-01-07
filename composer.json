@@ -14,13 +14,20 @@
         "issues": "https://github.com/stevegrunwell/time-constants/issues",
         "source": "https://github.com/stevegrunwell/time-constants"
     },
-    "require": {},
+    "require": {
+        "php": "^7.0"
+    },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.13",
         "phpunit/phpunit": "^6.0"
     },
     "autoload": {
         "files": ["constants.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Constants\\Tests\\": "tests/"
+        }
     },
     "config": {
         "preferred-install": "dist",
