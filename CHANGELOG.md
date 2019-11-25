@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 * Fixed a copy+paste error in the comment for `ONE_MINUTE`.
+* Add namespacing to the tests, minimum PHP version to `composer.json` ([#5], props @peter279k)
 
 ## [Version 1.1.0] - 2019-01-01
 
@@ -37,3 +38,4 @@ Initial public release of the library, with the following constants:
 [Version 1.0.0]: https://github.com/stevegrunwell/time-constants/releases/tag/v1.0.0
 [#2]: https://github.com/stevegrunwell/time-constants/pull/2
 [#3]: https://github.com/stevegrunwell/time-constants/pull/3
+[#5]: https://github.com/stevegrunwell/time-constants/pull/5
