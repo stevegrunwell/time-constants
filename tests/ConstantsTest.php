@@ -1,6 +1,6 @@
 <?php
 
-namespace Constants\Tests;
+namespace Tests;
 
 /**
  * Tests the definition of time constants.
