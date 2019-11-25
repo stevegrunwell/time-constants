@@ -56,7 +56,7 @@ if (! defined('YEAR_IN_SECONDS')) {
  * constants provide similar functionality.
  */
 
-/* One second. */
+/* One minute. */
 if (! defined('ONE_MINUTE')) {
     define('ONE_MINUTE', 1);
 }
