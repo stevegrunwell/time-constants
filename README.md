@@ -1,6 +1,6 @@
 # Time Constants
 
-[![Build Status](https://travis-ci.org/stevegrunwell/time-constants.svg?branch=develop)](https://travis-ci.org/stevegrunwell/time-constants)
+[![CI Pipeline](https://github.com/stevegrunwell/time-constants/actions/workflows/ci-cd.yml/badge.svg?branch=develop)](https://github.com/stevegrunwell/time-constants/actions/workflows/ci-cd.yml)
 [![Packagist](https://img.shields.io/packagist/v/stevegrunwell/time-constants.svg)](https://packagist.org/packages/stevegrunwell/time-constants)
 
 
