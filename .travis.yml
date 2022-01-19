@@ -9,17 +9,13 @@ cache:
 
 php:
   - nightly
-  - 7.4snapshot
-  - 7.3
-  - 7.2
-  - 7.1
-  - 7.0
+  - 8.1
 
 matrix:
   fast_finish: true
   include:
     - name: Coding standards
-      php: 7.3
+      php: 8.1
       env: CODING_STANDARDS=1
 
 before_install:

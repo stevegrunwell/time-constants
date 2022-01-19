@@ -30,7 +30,7 @@ If the requirements changed and we needed to cache the value for multiple days, 
 cache($cacheKey, $value, 5 * DAY_IN_SECONDS);
 ```
 
-These constants may seem familiar to WordPress developers, as they're absolutely [inspired by WordPress' use of time constants](https://codex.wordpress.org/Easier_Expression_of_Time_Constants). This package goes a bit further, however, adding `*_IN_MINUTES` constants, for easier use with libraries like [Laravel's `Cache` facade](https://laravel.com/docs/5.6/cache#cache-usage).
+These constants may seem familiar to WordPress developers, as they're absolutely [inspired by WordPress' use of time constants](https://codex.wordpress.org/Easier_Expression_of_Time_Constants). This package goes a bit further, however, adding `*_IN_MINUTES` constants, for easier use with libraries like [Laravel's `Cache` facade](https://laravel.com/docs/master/cache#cache-usage).
 
 ## Installation
 

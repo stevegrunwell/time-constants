@@ -24,7 +24,7 @@ class ConstantsTest extends TestCase
     public function testConstantsAreDefined($constant)
     {
         $this->assertTrue(defined($constant), 'Expected the constant to be defined.');
-        $this->assertInternalType('integer', constant($constant), 'Expected an integer value.');
+        $this->assertIsInt(constant($constant), 'Expected an integer value.');
     }
 
     /**
