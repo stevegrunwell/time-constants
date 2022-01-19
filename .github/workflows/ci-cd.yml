@@ -39,7 +39,7 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       - name: Run PHPUnit
-        run: composer test:unit
+        run: vendor/bin/phpunit --testdox --colors=always
 
   coding-standards:
     name: Coding standards
@@ -63,4 +63,4 @@ jobs:
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Check coding standards
-        run: composer test:standards
+        run: vendor/bin/php-cs-fixer fix --dry-run --verbose
