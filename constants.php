@@ -85,3 +85,29 @@ if (! defined('MONTH_IN_MINUTES')) {
 if (! defined('YEAR_IN_MINUTES')) {
     define('YEAR_IN_MINUTES', 365 * DAY_IN_MINUTES);
 }
+
+/**
+ * Common multipliers.
+ *
+ * These are useful when dealing with timing and things like cache expirations.
+ */
+
+/* A millisecond is 1/1000 of a second. */
+if (! defined('MILLISECONDS_PER_SECOND')) {
+    define('MILLISECONDS_PER_SECOND', 1000);
+}
+
+/* A microsecond is one millionth of a second. */
+if (! defined('MICROSECONDS_PER_SECOND')) {
+    define('MICROSECONDS_PER_SECOND', 1000000);
+}
+
+/* A nanosecond is one billionth of a second. */
+if (! defined('NANOSECONDS_PER_SECOND')) {
+    define('NANOSECONDS_PER_SECOND', 1000000000);
+}
+
+/* A picosecond is one trillionth of a second. */
+if (! defined('PICOSECONDS_PER_SECOND')) {
+    define('PICOSECONDS_PER_SECOND', 1000000000000);
+}
