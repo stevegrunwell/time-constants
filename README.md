@@ -66,3 +66,16 @@ This is a list of all constants defined by this package, along with their values
 * `WEEK_IN_MINUTES` (10,080 minutes)
 * `MONTH_IN_MINUTES` (43,200 minutes)
 * `YEAR_IN_MINUTES` (525,600 minutes)
+
+### Multipliers
+
+These can be helpful when dealing with fractions of a second. For example, all of the following are equivalent:
+
+```php
+6000 === (6 * ONE_SECOND) * 1000 === 6 * MILLISECONDS_PER_SECOND
+```
+
+* `MILLISECONDS_PER_SECOND` (1,000ms/s)
+* `MICROSECONDS_PER_SECOND` (1,000,000µs/s)
+* `NANOSECONDS_PER_SECOND` (1,000,000,000ns/s)
+* `PICOSECONDS_PER_SECOND` (1,000,000,000,000ps/s)
