@@ -31,9 +31,9 @@ class ConstantsTest extends TestCase
     /**
      * Provides a list of all constants defined by this package.
      *
-     * @return array{string, int}
+     * @return array<string, array{string, int}>
      */
-    public function constantsProvider(): array
+    public static function constantsProvider(): array
     {
         return [
             // Time in seconds.
