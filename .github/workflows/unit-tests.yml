@@ -19,6 +19,9 @@ jobs:
           php-version: ${{ matrix.php-version }}
           coverage: none
 
+      - name: Remove PHP-CS-Fixer as a dev dependency
+        run: composer remove --dev --no-install friendsofphp/php-cs-fixer
+
       - name: Install Composer dependencies
         uses: ramsey/composer-install@v2
 
