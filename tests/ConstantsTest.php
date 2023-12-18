@@ -22,7 +22,7 @@ class ConstantsTest extends TestCase
      *
      * @return void
      */
-    public function testConstantsAreDefined(string $constant, int $expected): void
+    public function testConstantsAreDefined(string $constant, int $expected)
     {
         $this->assertTrue(defined($constant), "Expected the '{$constant}' constant to be defined.");
         $this->assertSame($expected, constant($constant));
@@ -31,9 +31,9 @@ class ConstantsTest extends TestCase
     /**
      * Provides a list of all constants defined by this package.
      *
-     * @return array{string, int}
+     * @return array<string, array{string, int}>
      */
-    public function constantsProvider(): array
+    public static function constantsProvider(): array
     {
         return [
             // Time in seconds.
