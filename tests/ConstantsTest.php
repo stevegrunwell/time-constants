@@ -22,7 +22,7 @@ class ConstantsTest extends TestCase
      *
      * @return void
      */
-    public function testConstantsAreDefined(string $constant, int $expected): void
+    public function testConstantsAreDefined(string $constant, int $expected)
     {
         $this->assertTrue(defined($constant), "Expected the '{$constant}' constant to be defined.");
         $this->assertSame($expected, constant($constant));
