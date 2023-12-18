@@ -1,6 +1,6 @@
 # Time Constants
 
-[![CI Pipeline](https://github.com/stevegrunwell/time-constants/actions/workflows/ci-cd.yml/badge.svg?branch=develop)](https://github.com/stevegrunwell/time-constants/actions/workflows/ci-cd.yml)
+[![Unit Tests](https://github.com/stevegrunwell/time-constants/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/stevegrunwell/time-constants/actions/workflows/unit-tests.yml)
 [![Packagist](https://img.shields.io/packagist/v/stevegrunwell/time-constants.svg)](https://packagist.org/packages/stevegrunwell/time-constants)
 
 
