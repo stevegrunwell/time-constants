@@ -1,0 +1,29 @@
+name: Unit Tests
+
+on: [pull_request]
+
+jobs:
+  phpunit:
+    name: PHP ${{ matrix.php-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ['7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2', '8.3']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          coverage: none
+
+      - name: Remove PHP-CS-Fixer as a dev dependency
+        run: composer remove --dev --no-install friendsofphp/php-cs-fixer
+
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: Run test suite
+        run: vendor/bin/phpunit --testdox

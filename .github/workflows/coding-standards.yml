@@ -1,0 +1,23 @@
+name: Coding Standards
+
+on: [pull_request]
+
+jobs:
+  phpcs:
+    name: PHP Coding Standards Fixer
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: Check coding standards
+        run: vendor/bin/php-cs-fixer fix --dry-run --verbose

@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Version 1.2.0] — 2023-12-18
+
+* Add the following multipliers to help with sub-second timings ([#13]):
+    - `MILLISECONDS_PER_SECOND` (1,000ms/s)
+    - `MICROSECONDS_PER_SECOND` (1,000,000µs/s)
+    - `NANOSECONDS_PER_SECOND` (1,000,000,000ns/s)
+    - `PICOSECONDS_PER_SECOND` (1,000,000,000,000ps/s)
+* Remove the composer.lock file, overhaul CI pipeline so tests can be run across all supported versions of PHP ([#14], props @peter279k).
+* Define an `archive.exclude` section in `composer.json` ([#15]).
+
 ## [Version 1.1.2] – 2022-01-18
 
 * Add PHP 8 support in `composer.json` ([#9])
@@ -41,6 +51,7 @@ Initial public release of the library, with the following constants:
 
 
 [Unreleased]: https://github.com/stevegrunwell/time-constants/compare/main...develop
+[Version 1.2.0]: https://github.com/stevegrunwell/time-constants/releases/tag/v1.2.0
 [Version 1.1.2]: https://github.com/stevegrunwell/time-constants/releases/tag/v1.1.2
 [Version 1.1.1]: https://github.com/stevegrunwell/time-constants/releases/tag/v1.1.1
 [Version 1.1.0]: https://github.com/stevegrunwell/time-constants/releases/tag/v1.1.0
@@ -50,3 +61,6 @@ Initial public release of the library, with the following constants:
 [#5]: https://github.com/stevegrunwell/time-constants/pull/5
 [#9]: https://github.com/stevegrunwell/time-constants/pull/9
 [#10]: https://github.com/stevegrunwell/time-constants/pull/10
+[#13]: https://github.com/stevegrunwell/time-constants/pull/13
+[#14]: https://github.com/stevegrunwell/time-constants/pull/14
+[#15]: https://github.com/stevegrunwell/time-constants/pull/15
