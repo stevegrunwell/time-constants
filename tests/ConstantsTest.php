@@ -2,14 +2,13 @@
 
 namespace Tests;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Tests the definition of time constants.
  *
  * @package SteveGrunwell\TimeConstants
  */
-
-use PHPUnit\Framework\TestCase;
-
 class ConstantsTest extends TestCase
 {
     /**

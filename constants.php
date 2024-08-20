@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Defines useful time-based constants.
  *
