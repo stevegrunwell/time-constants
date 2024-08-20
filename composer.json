@@ -24,7 +24,7 @@
         "squizlabs/php_codesniffer": "^3.10"
     },
     "autoload": {
-        "files": ["constants.php"]
+        "files": ["src/Constants.php"]
     },
     "autoload-dev": {
         "psr-4": {
