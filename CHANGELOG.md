@@ -5,6 +5,54 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Version 2.0.0] — 2024-08-20
+
+**⚠️ Please note:** this is a **major** release, as it contains a breaking change to how the constants are defined. An extra file has been included to help bridge the gap between versions if you wish to run version 2.x of this library without updating all references across your app(s).
+
+* Introduce a Makefile for running dev commands ([#17])
+* Move the constants from the global namespace into the `TimeConstants` namespace ([#18])
+* Switch from PHP-CS-Fixer to PHP_CodeSniffer with the PHPCompatibility ruleset ([#19])
+    * With this change, we can run **one** version of PHPUnit in CI, using PHP_CodeSniffer to detect any backwards compatibility breaks with this (admittedly simply) library
+    * With only one version of PHPUnit necessary, tests have been upgraded for PHPUnit 11.x
+
+### Breaking changes
+
+This release moves the constants defined by this package from the global namespace into the `TimeConstants` namespace.
+
+Your implementations of these constants can be updated in either of the following ways:
+
+1. Explicitly import the constant(s) being used:
+    ```php
+    use const TimeConstants\HOUR_IN_SECONDS;
+    ```
+2. Update references to use the constants new, fully-qualified names:
+    ```diff
+    - cache($key, $value, HOUR_IN_SECONDS);
+    + cache($key, $value, \TimeConstants\HOUR_IN_SECONDS);
+    ```
+
+#### Temporary aliases to help with migration
+
+Alternatively, you may include the new `GlobalAliases.php` file as a short-term fix. This file will take the newly-namespaced constants and **also** define them in the global namespace.
+
+Either of the following approaches will ensure the aliased versions are loaded:
+
+1. (**Preferred**) Add the file to your `composer.json` file in the `autoload.files` array:
+    ```json
+    "autoload": {
+        "files": [
+            "vendor/stevegrunwell/time-constants/src/GlobalAliases.php"
+        ]
+    }
+    ```
+2. Explicitly requiring the file:
+    ```diff
+      require_once __DIR__ . '/vendor/autoload.php';
+    + require_once __DIR__ . '/vendor/stevegrunwell/time-constants/src/GlobalAliases.php';
+    ```
+
+Please note that this `GlobalAliases.php` file will be removed in the next **major** release (e.g. `v3.x`) of this library.
+
 ## [Version 1.2.0] — 2023-12-18
 
 * Add the following multipliers to help with sub-second timings ([#13]):
@@ -51,6 +99,7 @@ Initial public release of the library, with the following constants:
 
 
 [Unreleased]: https://github.com/stevegrunwell/time-constants/compare/main...develop
+[Version 2.0.0]: https://github.com/stevegrunwell/time-constants/releases/tag/v2.0.0
 [Version 1.2.0]: https://github.com/stevegrunwell/time-constants/releases/tag/v1.2.0
 [Version 1.1.2]: https://github.com/stevegrunwell/time-constants/releases/tag/v1.1.2
 [Version 1.1.1]: https://github.com/stevegrunwell/time-constants/releases/tag/v1.1.1
@@ -64,3 +113,6 @@ Initial public release of the library, with the following constants:
 [#13]: https://github.com/stevegrunwell/time-constants/pull/13
 [#14]: https://github.com/stevegrunwell/time-constants/pull/14
 [#15]: https://github.com/stevegrunwell/time-constants/pull/15
+[#17]: https://github.com/stevegrunwell/time-constants/pull/17
+[#18]: https://github.com/stevegrunwell/time-constants/pull/18
+[#19]: https://github.com/stevegrunwell/time-constants/pull/19

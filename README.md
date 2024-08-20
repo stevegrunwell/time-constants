@@ -21,13 +21,13 @@ cache($cacheKey, $value, 24 * 60 * 60);
 Instead of spending the time figuring out what `24 * 60 * 60` means (or the fact that `86400` is meant to be one day in seconds), **Time Constants** allows you to represent the time using an easy-to-understand PHP constant:
 
 ```php
-cache($cacheKey, $value, DAY_IN_SECONDS);
+cache($cacheKey, $value, \TimeConstants\DAY_IN_SECONDS);
 ```
 
 If the requirements changed and we needed to cache the value for multiple days, we can rewrite it as:
 
 ```php
-cache($cacheKey, $value, 5 * DAY_IN_SECONDS);
+cache($cacheKey, $value, 5 * \TimeConstants\DAY_IN_SECONDS);
 ```
 
 These constants may seem familiar to WordPress developers, as they're absolutely [inspired by WordPress' use of time constants](https://codex.wordpress.org/Easier_Expression_of_Time_Constants). This package goes a bit further, however, adding `*_IN_MINUTES` constants, for easier use with libraries like [Laravel's `Cache` facade](https://laravel.com/docs/master/cache#cache-usage).
@@ -45,6 +45,8 @@ The package has been configured to automatically expose the `constants.php` file
 ## Defined constants
 
 This is a list of all constants defined by this package, along with their values. Each constant is wrapped in a `if (! defined(...))` conditional, ensuring these constants can easily be redefined if necessary and won't conflict with existing constants.
+
+As of version 2.0.0 of this library, all of these constants are defined in the `TimeConstants` namespace. If you are upgrading from version 1.x, [please see the 2.0.0 release notes for notes about migration](https://github.com/stevegrunwell/time-constants/releases/tag/v2.0.0).
 
 > Please note that these constants are defined for convenience, and not necessarily for accuracy; all months are treated as 30 days, and years as 365 days. If you need support for leap years or more advanced measures of time, you might consider [PHP's `DateTime` class](http://php.net/manual/en/book.datetime.php) or [Nesbot's Carbon package](https://carbon.nesbot.com/docs/).
 
