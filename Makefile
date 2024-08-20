@@ -6,9 +6,9 @@ build:
 # Roll-up all of the test commands
 test: unit-tests standards
 
-# Check coding standards with PHP-CS-Fixer
+# Check coding standards with PHP_CodeSniffer
 standards:
-	vendor/bin/php-cs-fixer fix --dry-run --verbose
+	vendor/bin/phpcs
 
 # Execute the PHPUnit test suite
 unit-tests:
