@@ -4,7 +4,7 @@ on: [pull_request]
 
 jobs:
   phpcs:
-    name: PHP Coding Standards Fixer
+    name: PHP_CodeSniffer
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -13,11 +13,11 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: '8.3'
           coverage: none
 
       - name: Install Composer dependencies
-        uses: ramsey/composer-install@v2
+        uses: ramsey/composer-install@v3
 
       - name: Check coding standards
-        run: vendor/bin/php-cs-fixer fix --dry-run --verbose
+        run: make standards

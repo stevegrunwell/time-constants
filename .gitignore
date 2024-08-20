@@ -1,5 +1,7 @@
-.php-cs-fixer.cache
-.phpunit.result.cache
+.DS_Store
+.phpunit.cache
 .vscode
 composer.lock
+phpcs.xml
+phpunit.xml
 vendor
