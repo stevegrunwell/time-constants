@@ -12,6 +12,8 @@
  * @package SteveGrunwell\TimeConstants
  */
 
+declare(strict_types=1);
+
 $time_constants = [
     'ONE_SECOND',
     'MINUTE_IN_SECONDS',

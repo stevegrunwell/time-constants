@@ -6,6 +6,8 @@
  * @package SteveGrunwell\TimeConstants
  */
 
+declare(strict_types=1);
+
 namespace TimeConstants;
 
 /**
