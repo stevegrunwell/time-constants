@@ -37,6 +37,7 @@
     "archive": {
         "exclude": [
             ".*",
+            "Makefile",
             "phpunit.xml.dist",
             "tests"
         ]
