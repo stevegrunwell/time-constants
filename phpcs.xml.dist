@@ -5,12 +5,19 @@
     <arg value="sp"/>
     <arg name="extensions" value="php"/>
 
-    <file>constants.php</file>
+    <file>src</file>
     <file>tests</file>
 
     <rule ref="PSR12"/>
 
-    <!-- Test for compatibility issues with older versions of PHP.-->
-    <rule ref="PHPCompatibility"/>
+    <!-- Test (non-dev) code for compatibility issues with older versions of PHP.-->
+    <rule ref="PHPCompatibility">
+        <exclude-pattern>tests</exclude-pattern>
+    </rule>
     <config name="testVersion" value="7.0-"/>
+
+    <!-- The compatibility layer is special, we don't care that it defines + executes code. -->
+    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+        <exclude-pattern>src/GlobalAliases.php</exclude-pattern>
+    </rule>
 </ruleset>

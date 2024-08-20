@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -23,42 +24,67 @@ class ConstantsTest extends TestCase
      * @return void
      */
     #[DataProvider('constantsProvider')]
-    public function testConstantsAreDefined(string $constant, int $expected)
+    public function testConstantsAreDefined(string $constant, int $expected): void
     {
-        $this->assertTrue(defined($constant), "Expected the '{$constant}' constant to be defined.");
-        $this->assertSame($expected, constant($constant));
+        $namespaced = 'TimeConstants\\' . $constant;
+        $this->assertTrue(defined($namespaced), "Expected the '{$namespaced}' constant to be defined.");
+        $this->assertSame($expected, constant($namespaced));
+
+        $this->assertFalse(
+            defined($constant),
+            "The '{$constant}' constant should no longer be defined in the global namespace."
+        );
+    }
+
+    /**
+     * Once we've verified that only the namespaced constants are defined by default, let's load
+     * our GlobalAliases.php file.
+     */
+    #[DataProvider('constantsProvider')]
+    #[Depends('testConstantsAreDefined')]
+    public function testCompatibilityLayer(string $constant, int $expected): void
+    {
+        require_once __DIR__ . '/../src/GlobalAliases.php';
+
+        $this->assertTrue(
+            defined($constant),
+            "When the compatibility layer is loaded, '{$constant}' should exist in the global namespace."
+        );
+        $this->assertSame(
+            constant('TimeConstants\\' . $constant),
+            constant($constant),
+            sprintf('The global version of %1$s should match TimeConstants\\%1$s', $constant)
+        );
     }
 
     /**
      * Provides a list of all constants defined by this package.
      *
-     * @return array<string, array{string, int}>
+     * @return iterable<string, array{string, int}>
      */
-    public static function constantsProvider(): array
+    public static function constantsProvider(): iterable
     {
-        return [
-            // Time in seconds.
-            'One second (in seconds)'       => ['ONE_SECOND', 1],
-            'One minute (in seconds)'       => ['MINUTE_IN_SECONDS', 60],
-            'One hour (in seconds)'         => ['HOUR_IN_SECONDS', 3600],
-            'One day (in seconds)'          => ['DAY_IN_SECONDS', 86400],
-            'One week (in seconds'          => ['WEEK_IN_SECONDS', 604800],
-            'One 30-day month (in seconds)' => ['MONTH_IN_SECONDS', 2592000],
-            'One year (in seconds)'         => ['YEAR_IN_SECONDS', 31536000],
+        // Time in seconds.
+        yield 'One second (in seconds)'       => ['ONE_SECOND', 1];
+        yield 'One minute (in seconds)'       => ['MINUTE_IN_SECONDS', 60];
+        yield 'One hour (in seconds)'         => ['HOUR_IN_SECONDS', 3600];
+        yield 'One day (in seconds)'          => ['DAY_IN_SECONDS', 86400];
+        yield 'One week (in seconds'          => ['WEEK_IN_SECONDS', 604800];
+        yield 'One 30-day month (in seconds)' => ['MONTH_IN_SECONDS', 2592000];
+        yield 'One year (in seconds)'         => ['YEAR_IN_SECONDS', 31536000];
 
-            // Time in minutes.
-            'One minute (in minutes)'       => ['ONE_MINUTE', 1],
-            'One hour (in minutes)'         => ['HOUR_IN_MINUTES', 60],
-            'One day (in minutes)'          => ['DAY_IN_MINUTES', 1440],
-            'One week (in minutes'          => ['WEEK_IN_MINUTES', 10080],
-            'One 30-day month (in minutes)' => ['MONTH_IN_MINUTES', 43200],
-            'One year (in minutes)'         => ['YEAR_IN_MINUTES', 525600],
+        // Time in minutes.
+        yield 'One minute (in minutes)'       => ['ONE_MINUTE', 1];
+        yield 'One hour (in minutes)'         => ['HOUR_IN_MINUTES', 60];
+        yield 'One day (in minutes)'          => ['DAY_IN_MINUTES', 1440];
+        yield 'One week (in minutes'          => ['WEEK_IN_MINUTES', 10080];
+        yield 'One 30-day month (in minutes)' => ['MONTH_IN_MINUTES', 43200];
+        yield 'One year (in minutes)'         => ['YEAR_IN_MINUTES', 525600];
 
-            // Multipliers.
-            'Milliseconds per second'       => ['MILLISECONDS_PER_SECOND', 1000],
-            'Microseconds per second'       => ['MICROSECONDS_PER_SECOND', 1000000],
-            'Nanoseconds per second'        => ['NANOSECONDS_PER_SECOND', 1000000000],
-            'Picoseconds per second'        => ['PICOSECONDS_PER_SECOND', 1000000000000],
-        ];
+        // Multipliers.
+        yield 'Milliseconds per second'       => ['MILLISECONDS_PER_SECOND', 1000];
+        yield 'Microseconds per second'       => ['MICROSECONDS_PER_SECOND', 1000000];
+        yield 'Nanoseconds per second'        => ['NANOSECONDS_PER_SECOND', 1000000000];
+        yield 'Picoseconds per second'        => ['PICOSECONDS_PER_SECOND', 1000000000000];
     }
 }
