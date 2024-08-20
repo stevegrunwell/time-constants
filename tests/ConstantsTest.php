@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -14,13 +17,12 @@ class ConstantsTest extends TestCase
     /**
      * Ensure that each constant is defined and matches the expected value.
      *
-     * @dataProvider constantsProvider
-     *
      * @param string $constant The name of the constant.
      * @param int    $expected The expected value for the constant.
      *
      * @return void
      */
+    #[DataProvider('constantsProvider')]
     public function testConstantsAreDefined(string $constant, int $expected)
     {
         $this->assertTrue(defined($constant), "Expected the '{$constant}' constant to be defined.");
