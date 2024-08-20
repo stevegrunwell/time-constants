@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -23,7 +24,7 @@ class ConstantsTest extends TestCase
      * @return void
      */
     #[DataProvider('constantsProvider')]
-    public function testConstantsAreDefined(string $constant, int $expected)
+    public function testConstantsAreDefined(string $constant, int $expected): void
     {
         $namespaced = 'TimeConstants\\' . $constant;
         $this->assertTrue(defined($namespaced), "Expected the '{$namespaced}' constant to be defined.");
@@ -32,6 +33,27 @@ class ConstantsTest extends TestCase
         $this->assertFalse(
             defined($constant),
             "The '{$constant}' constant should no longer be defined in the global namespace."
+        );
+    }
+
+    /**
+     * Once we've verified that only the namespaced constants are defined by default, let's load
+     * our GlobalAliases.php file.
+     */
+    #[DataProvider('constantsProvider')]
+    #[Depends('testConstantsAreDefined')]
+    public function testCompatibilityLayer(string $constant, int $expected): void
+    {
+        require_once __DIR__ . '/../src/GlobalAliases.php';
+
+        $this->assertTrue(
+            defined($constant),
+            "When the compatibility layer is loaded, '{$constant}' should exist in the global namespace."
+        );
+        $this->assertSame(
+            constant('TimeConstants\\' . $constant),
+            constant($constant),
+            sprintf('The global version of %1$s should match TimeConstants\\%1$s', $constant)
         );
     }
 
