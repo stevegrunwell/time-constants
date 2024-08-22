@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Version 2.0.1] — 2024-08-22
+
+* Now that constants are namespaced, remove the `defined()` checks and unnecessary multiplication in order to a) help IDEs and b) remove an (albeit tiny) level of overhead ([#21])
+
 ## [Version 2.0.0] — 2024-08-20
 
 **⚠️ Please note:** this is a **major** release, as it contains a breaking change to how the constants are defined. An extra file has been included to help bridge the gap between versions if you wish to run version 2.x of this library without updating all references across your app(s).
@@ -99,6 +103,7 @@ Initial public release of the library, with the following constants:
 
 
 [Unreleased]: https://github.com/stevegrunwell/time-constants/compare/main...develop
+[Version 2.0.1]: https://github.com/stevegrunwell/time-constants/releases/tag/v2.0.1
 [Version 2.0.0]: https://github.com/stevegrunwell/time-constants/releases/tag/v2.0.0
 [Version 1.2.0]: https://github.com/stevegrunwell/time-constants/releases/tag/v1.2.0
 [Version 1.1.2]: https://github.com/stevegrunwell/time-constants/releases/tag/v1.1.2
@@ -116,3 +121,4 @@ Initial public release of the library, with the following constants:
 [#17]: https://github.com/stevegrunwell/time-constants/pull/17
 [#18]: https://github.com/stevegrunwell/time-constants/pull/18
 [#19]: https://github.com/stevegrunwell/time-constants/pull/19
+[#21]: https://github.com/stevegrunwell/time-constants/pull/21
