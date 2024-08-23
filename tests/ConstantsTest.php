@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Tests the definition of time constants.
  *
- * @package SteveGrunwell\TimeConstants
+ * @package TimeConstants
  */
 class ConstantsTest extends TestCase
 {

@@ -3,7 +3,7 @@
 /**
  * Defines useful time-based constants.
  *
- * @package SteveGrunwell\TimeConstants
+ * @package TimeConstants
  */
 
 declare(strict_types=1);
@@ -22,37 +22,37 @@ namespace TimeConstants;
 /**
  * One second.
  */
-define(__NAMESPACE__ . '\\ONE_SECOND', 1);
+const ONE_SECOND = 1;
 
 /**
  * One minute is 60 seconds.
  */
-define(__NAMESPACE__ . '\\MINUTE_IN_SECONDS', 60);
+const MINUTE_IN_SECONDS = 60;
 
 /**
  * One hour is 60 minutes.
  */
-define(__NAMESPACE__ . '\\HOUR_IN_SECONDS', 3600);
+const HOUR_IN_SECONDS = 3600;
 
 /**
  * One day is 24 hours.
  */
-define(__NAMESPACE__ . '\\DAY_IN_SECONDS', 86400);
+const DAY_IN_SECONDS = 86400;
 
 /**
  * One week is 7 days.
  */
-define(__NAMESPACE__ . '\\WEEK_IN_SECONDS', 604800);
+const WEEK_IN_SECONDS = 604800;
 
 /**
  * For general purposes, assume that one month is 30 days.
  */
-define(__NAMESPACE__ . '\\MONTH_IN_SECONDS', 2592000);
+const MONTH_IN_SECONDS = 2592000;
 
 /**
  * For general purposes, assume that one year is 365 days.
  */
-define(__NAMESPACE__ . '\\YEAR_IN_SECONDS', 31536000);
+const YEAR_IN_SECONDS = 31536000;
 
 /**
  * Time based in minutes.
@@ -64,32 +64,32 @@ define(__NAMESPACE__ . '\\YEAR_IN_SECONDS', 31536000);
 /**
  *  One minute.
  */
-define(__NAMESPACE__ . '\\ONE_MINUTE', 1);
+const ONE_MINUTE = 1;
 
 /**
  * One hour is 60 minutes.
  */
-define(__NAMESPACE__ . '\\HOUR_IN_MINUTES', 60);
+const HOUR_IN_MINUTES = 60;
 
 /**
  * One day is 24 hours.
  */
-define(__NAMESPACE__ . '\\DAY_IN_MINUTES', 1440);
+const DAY_IN_MINUTES = 1440;
 
 /**
  * One week is 7 days.
  */
-define(__NAMESPACE__ . '\\WEEK_IN_MINUTES', 10080);
+const WEEK_IN_MINUTES = 10080;
 
 /**
  * For general purposes, assume that one month is 30 days.
  */
-define(__NAMESPACE__ . '\\MONTH_IN_MINUTES', 43200);
+const MONTH_IN_MINUTES = 43200;
 
 /**
  * For general purposes, assume that one year is 365 days.
  */
-define(__NAMESPACE__ . '\\YEAR_IN_MINUTES', 525600);
+const YEAR_IN_MINUTES = 525600;
 
 /**
  * Common multipliers.
@@ -100,19 +100,19 @@ define(__NAMESPACE__ . '\\YEAR_IN_MINUTES', 525600);
 /**
  * A millisecond is 1/1000 of a second.
  */
-define(__NAMESPACE__ . '\\MILLISECONDS_PER_SECOND', 1000);
+const MILLISECONDS_PER_SECOND = 1000;
 
 /**
  * A microsecond is one millionth of a second.
  */
-define(__NAMESPACE__ . '\\MICROSECONDS_PER_SECOND', 1000000);
+const MICROSECONDS_PER_SECOND = 1000000;
 
 /**
  * A nanosecond is one billionth of a second.
  */
-define(__NAMESPACE__ . '\\NANOSECONDS_PER_SECOND', 1000000000);
+const NANOSECONDS_PER_SECOND = 1000000000;
 
 /**
  * A picosecond is one trillionth of a second.
  */
-define(__NAMESPACE__ . '\\PICOSECONDS_PER_SECOND', 1000000000000);
+const PICOSECONDS_PER_SECOND = 1000000000000;
