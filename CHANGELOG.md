@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Version 2.0.2] — 2024-08-23
+
+* Use the `const` keyword instead of `define()` for slight performance gains, easier readability, and better IDE interoperability. Props @ChadSikorra and @ramsey for the recommendation! ([#23])
+
 ## [Version 2.0.1] — 2024-08-22
 
 * Now that constants are namespaced, remove the `defined()` checks and unnecessary multiplication in order to a) help IDEs and b) remove an (albeit tiny) level of overhead ([#21])
@@ -103,6 +107,7 @@ Initial public release of the library, with the following constants:
 
 
 [Unreleased]: https://github.com/stevegrunwell/time-constants/compare/main...develop
+[Version 2.0.2]: https://github.com/stevegrunwell/time-constants/releases/tag/v2.0.2
 [Version 2.0.1]: https://github.com/stevegrunwell/time-constants/releases/tag/v2.0.1
 [Version 2.0.0]: https://github.com/stevegrunwell/time-constants/releases/tag/v2.0.0
 [Version 1.2.0]: https://github.com/stevegrunwell/time-constants/releases/tag/v1.2.0
@@ -122,3 +127,4 @@ Initial public release of the library, with the following constants:
 [#18]: https://github.com/stevegrunwell/time-constants/pull/18
 [#19]: https://github.com/stevegrunwell/time-constants/pull/19
 [#21]: https://github.com/stevegrunwell/time-constants/pull/21
+[#23]: https://github.com/stevegrunwell/time-constants/pull/23
