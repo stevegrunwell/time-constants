@@ -9,7 +9,7 @@
  * either load this file via `autoload.files` in your `composer.json` file or by requiring the file
  * directly in your code.
  *
- * @package SteveGrunwell\TimeConstants
+ * @package TimeConstants
  */
 
 declare(strict_types=1);
