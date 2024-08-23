@@ -3,7 +3,7 @@
 /**
  * Defines useful time-based constants.
  *
- * @package SteveGrunwell\TimeConstants
+ * @package TimeConstants
  */
 
 declare(strict_types=1);
